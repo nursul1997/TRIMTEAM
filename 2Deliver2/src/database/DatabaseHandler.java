@@ -1,4 +1,8 @@
-package Database;
+/*
+This parameters are exists in case of using MySQL
+ */
+
+package database;
 
 import java.sql.*;
 

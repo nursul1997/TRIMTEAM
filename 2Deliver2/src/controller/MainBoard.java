@@ -1,9 +1,6 @@
-package Controller;
+package controller;
 
-import Database.DatabaseHandler;
-import Model.Order;
-import Model.User;
-import javafx.collections.ObservableList;
+import database.DatabaseHandler;
 
 public class MainBoard {
 

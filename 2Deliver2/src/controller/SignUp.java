@@ -1,7 +1,7 @@
-package Controller;
+package controller;
 
-import Model.Person;
-import Model.User;
+import model.Person;
+import model.User;
 
 public class SignUp {
 
