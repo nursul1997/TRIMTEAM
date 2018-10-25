@@ -1,6 +1,6 @@
-package dbs.mocks;
+package deliver.database.mocks;
 
-import dbs.interfaces.Savable;
+import deliver.database.interfaces.Savable;
 
 public class Person extends Savable {
     private String firstName;

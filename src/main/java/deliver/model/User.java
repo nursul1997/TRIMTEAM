@@ -1,7 +1,5 @@
 package deliver.model;
 
-import dbs.controllers.DB_Manager;
-
 public class User {
 
     private int id;

@@ -1,10 +1,10 @@
-package dbs.controllers;
+package deliver.database.controllers;
 
 import java.util.List;
 
-import dbs.interfaces.Database;
-import dbs.interfaces.Savable;
-import static dbs.controllers.HelperFunctions.saveToJsonFile;
+import deliver.database.interfaces.Database;
+import deliver.database.interfaces.Savable;
+import static deliver.database.controllers.HelperFunctions.saveToJsonFile;
 
 public class DB_Manager implements Database {
     @Override

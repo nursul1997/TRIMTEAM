@@ -1,8 +1,8 @@
-package dbs;
+package deliver.database;
 
-import dbs.controllers.DB_Manager;
-import dbs.mocks.Person;
-import dbs.mocks.Pet;
+import deliver.database.controllers.DB_Manager;
+import deliver.database.mocks.Person;
+import deliver.database.mocks.Pet;
 
 public class UsageExample {
     public static void main(String[] args) {

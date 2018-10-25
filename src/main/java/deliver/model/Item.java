@@ -1,6 +1,5 @@
 package deliver.model;
 
-import dbs.controllers.*;
 public class Item {
 
     private int id;

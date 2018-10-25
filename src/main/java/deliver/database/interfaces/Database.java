@@ -1,4 +1,4 @@
-package dbs.interfaces;
+package deliver.database.interfaces;
 
 public interface Database {
 

@@ -1,10 +1,10 @@
-package dbs.interfaces;
+package deliver.database.interfaces;
 
 import java.lang.reflect.Field;
 
-import static dbs.controllers.HelperFunctions.deserialize;
-import static dbs.controllers.HelperFunctions.getJsonById;
-import static dbs.controllers.HelperFunctions.getObjects;
+import static deliver.database.controllers.HelperFunctions.deserialize;
+import static deliver.database.controllers.HelperFunctions.getJsonById;
+import static deliver.database.controllers.HelperFunctions.getObjects;
 
 public abstract class Savable {
     public long id;
