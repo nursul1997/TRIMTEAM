@@ -6,12 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="0" />
         <module name="TRIMTEAM" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="0" target="7" />
       <module name="TRIMTEAM" target="7" />
     </bytecodeTargetLevel>
   </component>
