@@ -1,7 +1,10 @@
 package deliver.model;
 
+import dbs.controllers.*;
+
 public class Person {
 
+    private int id;
     private String firstName;
     private String lastName;
     private String phone;
@@ -19,6 +22,12 @@ public class Person {
     }
 
     //getters and setters
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
     public String getFirstName() {
         return firstName;
     }

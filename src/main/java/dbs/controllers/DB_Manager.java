@@ -4,7 +4,6 @@ import java.util.List;
 
 import dbs.interfaces.Database;
 import dbs.interfaces.Savable;
-
 import static dbs.controllers.HelperFunctions.saveToJsonFile;
 
 public class DB_Manager implements Database {

@@ -1,7 +1,10 @@
 package deliver.model;
 
+import dbs.controllers.*;
+
 public class Order {
 
+    private int id;
     private int person_id;
     private String orderName;
     private String from;
@@ -12,14 +15,24 @@ public class Order {
     public Order() {
     }
 
-    public Order(String orderName, String from, String destination, String note) {
+    public Order(int person_id, String orderName, String from, String destination, String note, String status) {
+        this.person_id = person_id;
         this.orderName = orderName;
         this.from = from;
         this.destination = destination;
         this.note = note;
+        this.status = status;
     }
 
+
     //getters and setters
+
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
     public int getPerson_id() {
         return person_id;
     }

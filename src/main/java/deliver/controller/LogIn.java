@@ -1,12 +1,13 @@
 package deliver.controller;
 
+import deliver.main.Main;
 import deliver.model.User;
 
 public class LogIn {
 
-    public LogIn(){
-
-        User user;
+    public void LoggingIn(User user){
+        //Search from db
+        switchToMainBoardScreen(user);
     }
 
     private void incorrectInputReminder(){
@@ -17,7 +18,7 @@ public class LogIn {
 
     }
 
-    private void switchToMainBoardScreen(){
-
+    private void switchToMainBoardScreen(User user){
+        MainBoard mainBoard = new MainBoard(user);
     }
 }

@@ -1,7 +1,10 @@
 package deliver.model;
 
+import dbs.controllers.DB_Manager;
+
 public class User {
 
+    private int id;
     private int person_Id;
     private int role_Id;
     private String userName;
@@ -13,7 +16,9 @@ public class User {
     public User(){
     }
 
-    public User(String userName, String password,String eMail, String address, String status){
+    public User(int person_Id, int role_Id, String userName, String password, String eMail, String address, String status) {
+        this.person_Id = person_Id;
+        this.role_Id = role_Id;
         this.userName = userName;
         this.password = password;
         this.eMail = eMail;
@@ -21,8 +26,13 @@ public class User {
         this.status = status;
     }
 
-
     //getters and setters
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
     public int getPerson_Id() {
         return person_Id;
     }

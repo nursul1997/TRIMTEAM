@@ -1,13 +1,19 @@
 package deliver.controller;
 
+import dbs.controllers.DB_Manager;
+import deliver.model.Order;
+import deliver.model.User;
+
 public class MainBoard {
 
     public static int userId;
 
-    private LogIn login;
+    public MainBoard(User user){
+        userId = user.getId();
+    }
 
     private void makeOrder(){
-
+        Order myOrder = new Order();
     }
 
     private void updateList(){

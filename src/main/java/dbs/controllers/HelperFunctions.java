@@ -29,7 +29,6 @@ public class HelperFunctions {
         }
     }
 
-
     private static void generateId(Savable objectToSave, String name) {
         List<String> objects = getObjects(name);
 
@@ -45,7 +44,6 @@ public class HelperFunctions {
         objectToSave.setId(id);
     }
 
-
     private static String convertToJson(Savable objectToSave) {
         ObjectMapper mapper = new ObjectMapper();
         mapper.enable(SerializationFeature.INDENT_OUTPUT);
@@ -59,7 +57,6 @@ public class HelperFunctions {
 
         return json;
     }
-
 
     public static List<String> getObjects(String name) {
         String filename = name + ".json";
@@ -82,7 +79,6 @@ public class HelperFunctions {
         return jsonObjects;
     }
 
-
     private static List<String> splitJson(String text) {
         List<String> jsonObjects = new ArrayList();
         int open = 0;
@@ -98,7 +94,6 @@ public class HelperFunctions {
         }
         return jsonObjects;
     }
-
 
     public static void saveUpdatedJson(List<String> jsonObjects, Savable object) {
         String filename = object.recieveFilename() + ".json";
@@ -116,7 +111,6 @@ public class HelperFunctions {
         }
     }
 
-
     public static List<String> updateJsonObject(long id, Savable object) {
         String className = object.recieveFilename();
         List<String> jsonObjects = getObjects(className);
@@ -130,7 +124,6 @@ public class HelperFunctions {
         return jsonObjects;
     }
 
-
     public static void deleteFile(Savable object) {
         String fileName = object.recieveFilename() + ".json";
         try {
@@ -141,7 +134,6 @@ public class HelperFunctions {
         }
     }
 
-
     public static Object retrieveJsonObject(long id, Savable object) {
         String className = object.recieveFilename();
         List<String> jsonObjects = getObjects(className);
@@ -151,7 +143,6 @@ public class HelperFunctions {
         Object jsonObject = deserialize(target, object);
         return jsonObject;
     }
-
 
     public static Object deserialize(String json, Savable object) {
         ObjectMapper mapper = new ObjectMapper();
@@ -167,7 +158,6 @@ public class HelperFunctions {
         return deserializedObject;
     }
 
-
     public static String getJsonById(long id, List<String> jsonObjects) {
         String target = "";
         for (int i = 0; i < jsonObjects.size(); i++) {
@@ -177,7 +167,6 @@ public class HelperFunctions {
         }
         return target;
     }
-
 
     public static List<String> deleteJsonObject(long id, Savable object){
         String className = object.recieveFilename();
@@ -191,6 +180,4 @@ public class HelperFunctions {
         }
         return jsonObjects;
     }
-
-
 }
