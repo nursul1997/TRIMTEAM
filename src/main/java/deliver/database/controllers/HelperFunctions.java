@@ -1,9 +1,9 @@
-package deliver.database.controllers;
+package main.controllers;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import deliver.database.interfaces.Savable;
+import main.interfaces.Savable;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 
 public class HelperFunctions {
-    public static void saveToJsonFile(Savable objectToSave, String name) {
+    public static Object saveToJsonFile(Savable objectToSave, String name) {
         generateId(objectToSave, name);
 
         String filename = name + ".json";
@@ -24,25 +24,30 @@ public class HelperFunctions {
             PrintWriter out = new PrintWriter(bw)
         ) {
             out.println(json + ",");
+            return objectToSave;
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+
+        return null;
     }
 
+
     private static void generateId(Savable objectToSave, String name) {
-        List<String> objects = getObjects(name);
+        List<String> objects = getObjects(objectToSave.getClass());
 
         long id;
         if (objects.isEmpty()) {
             id = 1;
         } else {
             String lastObject = objects.get(objects.size() - 1);
-            Savable savable = (Savable) deserialize(lastObject, objectToSave);
+            Savable savable = (Savable) deserialize(lastObject, objectToSave.getClass());
             id = savable.getId() + 1;
         }
 
         objectToSave.setId(id);
     }
+
 
     private static String convertToJson(Savable objectToSave) {
         ObjectMapper mapper = new ObjectMapper();
@@ -58,8 +63,10 @@ public class HelperFunctions {
         return json;
     }
 
-    public static List<String> getObjects(String name) {
-        String filename = name + ".json";
+
+    public static List<String> getObjects(Class aClass) {
+        String className = getClassName(aClass);
+        String filename = className + ".json";
         StringBuilder fileContent = new StringBuilder();
 
         try {
@@ -79,6 +86,7 @@ public class HelperFunctions {
         return jsonObjects;
     }
 
+
     private static List<String> splitJson(String text) {
         List<String> jsonObjects = new ArrayList();
         int open = 0;
@@ -95,8 +103,9 @@ public class HelperFunctions {
         return jsonObjects;
     }
 
-    public static void saveUpdatedJson(List<String> jsonObjects, Savable object) {
-        String filename = object.recieveFilename() + ".json";
+
+    public static void saveUpdatedJson(List<String> jsonObjects, Class aClass) {
+        String filename = getClassName(aClass) + ".json";
 
         try (
             FileWriter fw = new FileWriter(filename, true);
@@ -111,9 +120,9 @@ public class HelperFunctions {
         }
     }
 
+
     public static List<String> updateJsonObject(long id, Savable object) {
-        String className = object.recieveFilename();
-        List<String> jsonObjects = getObjects(className);
+        List<String> jsonObjects = getObjects(object.getClass());
         for (int i = 0; i < jsonObjects.size(); i++) {
             if (jsonObjects.get(i).substring(11, 12).equals(Long.toString(id))) {
                 jsonObjects.set(i, convertToJson(object));
@@ -124,8 +133,9 @@ public class HelperFunctions {
         return jsonObjects;
     }
 
-    public static void deleteFile(Savable object) {
-        String fileName = object.recieveFilename() + ".json";
+
+    public static void deleteFile(Class aClass) {
+        String fileName = getClassName(aClass) + ".json";
         try {
             File file = new File(fileName);
             file.delete();
@@ -134,29 +144,42 @@ public class HelperFunctions {
         }
     }
 
-    public static Object retrieveJsonObject(long id, Savable object) {
-        String className = object.recieveFilename();
-        List<String> jsonObjects = getObjects(className);
+
+    public static Object retrieveJsonObject(long id, Class aClass) {
+        List<String> jsonObjects = getObjects(aClass);
 
         String target = getJsonById(id, jsonObjects);
 
-        Object jsonObject = deserialize(target, object);
+        Object jsonObject = deserialize(target, aClass);
         return jsonObject;
     }
 
-    public static Object deserialize(String json, Savable object) {
+
+    public static Object deserialize(String json, Class aClass) {
         ObjectMapper mapper = new ObjectMapper();
 
         Object deserializedObject = null;
 
         try {
-            deserializedObject = mapper.readValue(json, object.getClass());
+            deserializedObject = mapper.readValue(json, aClass);
         } catch (IOException ex) {
             ex.printStackTrace();
         }
 
         return deserializedObject;
     }
+
+
+    public static List deserializeList(List<String> jsonObjects, Class aClass) {
+        List<Object> deserializedObjects = new ArrayList<>();
+
+        for (String jsonObject : jsonObjects) {
+            deserializedObjects.add(deserialize(jsonObject, aClass));
+        }
+
+        return deserializedObjects;
+    }
+
 
     public static String getJsonById(long id, List<String> jsonObjects) {
         String target = "";
@@ -168,9 +191,9 @@ public class HelperFunctions {
         return target;
     }
 
-    public static List<String> deleteJsonObject(long id, Savable object){
-        String className = object.recieveFilename();
-        List<String> jsonObjects = HelperFunctions.getObjects(className);
+
+    public static List<String> deleteJsonObject(long id, Class aClass){
+        List<String> jsonObjects = HelperFunctions.getObjects(aClass);
 
         for (int i = 0; i < jsonObjects.size(); i++) {
             if (jsonObjects.get(i).substring(11,12).equals(Long.toString(id))) {
@@ -179,5 +202,11 @@ public class HelperFunctions {
             }
         }
         return jsonObjects;
+    }
+
+    public static String getClassName(Class aClass) {
+        String[] reference = (aClass + "").split("\\.");
+        String className = reference[reference.length - 1];
+        return className;
     }
 }

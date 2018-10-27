@@ -1,12 +1,16 @@
-package deliver.database.interfaces;
+package main.interfaces;
+
+import java.util.List;
 
 public interface Database {
 
-    void save(Savable object);
+    Object save(Savable object);
 
-    Object retrieve(long id, Savable object);
+    Object get(long id, Class aClass);
 
-    void delete(long id, Savable object);
+    void delete(long id, Class aClass);
 
     void update(long id, Savable object);
+
+    List findAll(Class aClass);
 }
