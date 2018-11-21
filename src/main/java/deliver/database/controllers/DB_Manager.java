@@ -1,11 +1,11 @@
-package main.controllers;
+package deliver.database.controllers;
 
 import java.util.List;
 
-import main.interfaces.Database;
-import main.interfaces.Savable;
+import deliver.database.interfaces.Database;
+import deliver.database.interfaces.Savable;
 
-import static main.controllers.HelperFunctions.*;
+import static deliver.database.controllers.HelperFunctions.*;
 
 public class DB_Manager implements Database {
     @Override

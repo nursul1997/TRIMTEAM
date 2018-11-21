@@ -1,4 +1,4 @@
-package main.interfaces;
+package deliver.database.interfaces;
 
 import java.util.List;
 
