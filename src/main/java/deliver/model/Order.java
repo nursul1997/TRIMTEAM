@@ -1,19 +1,20 @@
 package deliver.model;
 
-public class Order {
+import deliver.database.interfaces.Savable;
 
-    private int id;
-    private int person_id;
+public class Order extends Savable{
+
+    private long this_id =id;
+    private long person_id;
     private String orderName;
     private String from;
     private String destination;
     private String note;
     private String status;
 
-    public Order() {
-    }
+    public Order() {}
 
-    public Order(int person_id, String orderName, String from, String destination, String note, String status) {
+    public Order(long person_id, String orderName, String from, String destination, String note, String status) {
         this.person_id = person_id;
         this.orderName = orderName;
         this.from = from;
@@ -25,16 +26,13 @@ public class Order {
 
     //getters and setters
 
-    public int getId() {
-        return id;
-    }
     public void setId(int id) {
-        this.id = id;
+        this.this_id = id;
     }
-    public int getPerson_id() {
+    public long getPerson_id() {
         return person_id;
     }
-    public void setPerson_id(int person_id) {
+    public void setPerson_id(long person_id) {
         this.person_id = person_id;
     }
     public String getOrderName() {
@@ -66,5 +64,17 @@ public class Order {
     }
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", orderName='" + orderName + '\'' +
+                ", from='" + from + '\'' +
+                ", destination=" + destination + '\'' +
+                ", note=" + note + '\'' +
+                ", status=" + status +
+                '}';
     }
 }

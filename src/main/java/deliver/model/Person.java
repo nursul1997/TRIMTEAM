@@ -1,8 +1,9 @@
 package deliver.model;
 
-public class Person {
+import deliver.database.interfaces.Savable;
 
-    private int id;
+public class Person extends Savable {
+
     private String firstName;
     private String lastName;
     private String phone;
@@ -20,10 +21,7 @@ public class Person {
     }
 
     //getters and setters
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
     public String getFirstName() {
@@ -51,4 +49,14 @@ public class Person {
         this.address = address;
     }
 
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phone=" + phone + '\'' +
+                ", address=" + address +
+                '}';
+    }
 }

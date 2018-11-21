@@ -1,10 +1,11 @@
 package deliver.model;
 
-public class User {
+import deliver.database.interfaces.Savable;
 
-    private int id;
-    private int person_Id;
-    private int role_Id;
+public class User extends Savable {
+
+    private long person_Id;
+    private long role_Id;
     private String userName;
     private String password;
     private String eMail;
@@ -14,7 +15,7 @@ public class User {
     public User(){
     }
 
-    public User(int person_Id, int role_Id, String userName, String password, String eMail, String address, String status) {
+    public User(long person_Id, long role_Id, String userName, String password, String eMail, String address, String status) {
         this.person_Id = person_Id;
         this.role_Id = role_Id;
         this.userName = userName;
@@ -25,22 +26,19 @@ public class User {
     }
 
     //getters and setters
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
-    public int getPerson_Id() {
+    public long getPerson_Id() {
         return person_Id;
     }
-    public void setPerson_Id(int person_Id) {
+    public void setPerson_Id(long person_Id) {
         this.person_Id = person_Id;
     }
-    public int getRole_Id() {
+    public long getRole_Id() {
         return role_Id;
     }
-    public void setRole_Id(int role_Id) {
+    public void setRole_Id(long role_Id) {
         this.role_Id = role_Id;
     }
     public String getUserName() {
@@ -72,5 +70,19 @@ public class User {
     }
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", person_Id='" + person_Id + '\'' +
+                ", role_Id='" + role_Id + '\'' +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", eMail='" + eMail + '\'' +
+                ", address=" + address + '\'' +
+                ", status=" + status +
+                '}';
     }
 }

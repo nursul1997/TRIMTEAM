@@ -7,6 +7,7 @@ import main.mocks.Pet;
 import java.util.ArrayList;
 
 public class UsageExample {
+
     public static void main(String[] args) {
         DB_Manager db_manager = new DB_Manager();
 
