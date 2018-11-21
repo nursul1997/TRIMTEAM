@@ -14,12 +14,12 @@ public class OrderListController {
     private void showOpenOrderList() {
         db_manager.findAll((Class) Order);
         String status = order.getStatus();
-        int id = order.getId();
+        long id = order.getId();
         String oName = order.getOrderName();
         String from = order.getFrom();
         String destination = order.getDestination();
         String note = order.getNote();
-        int personId = order.getPerson_id();
+        long personId = order.getPerson_id();
         if (status == "Open") {
             System.out.println("Delivering ID: " + id + ". Order name: "+oName+". Status: "+status+". Person ID: "+personId+". From: "+from+". To: "+destination+". Note: " + note+".");
         }
@@ -29,12 +29,12 @@ public class OrderListController {
     private void showDoneOrderList() {
         db_manager.findAll((Class) Order);
         String status = order.getStatus();
-        int id = order.getId();
+        long id = order.getId();
         String oName = order.getOrderName();
         String from = order.getFrom();
         String destination = order.getDestination();
         String note = order.getNote();
-        int personId = order.getPerson_id();
+        long personId = order.getPerson_id();
         if (status == "Done") {
             System.out.println("Delivering ID: " + id + ". Order name: "+oName+". Status: "+status+". Person ID: "+personId+". From: "+from+". To: "+destination+". Note: " + note+".");
         }
