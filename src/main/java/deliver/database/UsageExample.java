@@ -1,8 +1,8 @@
-package main;
+package deliver.database;
 
-import main.controllers.DB_Manager;
-import main.mocks.Person;
-import main.mocks.Pet;
+import deliver.database.controllers.DB_Manager;
+import deliver.database.mocks.Person;
+import deliver.database.mocks.Pet;
 
 import java.util.ArrayList;
 

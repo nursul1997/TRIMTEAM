@@ -1,6 +1,6 @@
-package main.mocks;
+package deliver.database.mocks;
 
-import main.interfaces.Savable;
+import deliver.database.interfaces.Savable;
 
 public class Pet extends Savable {
     private long personId;

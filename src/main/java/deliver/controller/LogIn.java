@@ -1,6 +1,5 @@
 package deliver.controller;
 
-import deliver.main.Main;
 import deliver.model.User;
 
 public class LogIn {

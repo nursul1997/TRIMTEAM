@@ -10,3 +10,15 @@
   "name" : "Hedwig",
   "specie" : "Owl"
 },
+{
+  "id" : 3,
+  "personId" : 8,
+  "name" : "Hedwig",
+  "specie" : "Owl"
+},
+{
+  "id" : 4,
+  "personId" : 9,
+  "name" : "Scabbers",
+  "specie" : "Rat"
+},
