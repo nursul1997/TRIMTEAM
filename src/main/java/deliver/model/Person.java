@@ -7,8 +7,8 @@ public class Person extends Savable {
     private String firstName;
     private String lastName;
     private String phone;
+    private String eMail;
     private String address;
-
 
     public Person() {
     }
@@ -48,6 +48,12 @@ public class Person extends Savable {
     public void setAddress(String address) {
         this.address = address;
     }
+    public String geteMail() {
+        return eMail;
+    }
+    public void seteMail(String eMail) {
+        this.eMail = eMail;
+    }
 
     @Override
     public String toString() {
@@ -56,6 +62,8 @@ public class Person extends Savable {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", phone=" + phone + '\'' +
+                ", eMail='" + eMail + '\'' +
+                ", address=" + address + '\'' +
                 ", address=" + address +
                 '}';
     }
