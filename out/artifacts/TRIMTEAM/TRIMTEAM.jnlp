@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="TRIMTEAM.jnlp">
+  <information>
+    <title>TRIMTEAM</title>
+    <vendor>Unknown</vendor>
+    <description>TRIMTEAM</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="TRIMTEAM.jar" size="15498119" download="eager" />
+    <jar href="fontawesome-free-5.0.13\fontawesomefx-8.9.jar" size="571068" download="eager" />
+    <jar href="jfoenix-8.0.1\jfoenix-8.0.1.jar" size="2405715" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="600" height="400" main-class="deliver.main.Main"  name="TRIMTEAM" />
+  <update check="background"/>
+</jnlp>
