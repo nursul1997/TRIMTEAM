@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="582.0" prefWidth="539.0" style="-fx-background-color: green;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutY="39.0" prefHeight="570.0" prefWidth="539.0" style="-fx-background-image: ; -fx-background-color: white;">
+         <children>
+            <TextField layoutX="133.0" layoutY="86.0" opacity="0.3" prefHeight="34.0" prefWidth="108.0" style="-fx-border-color: white; -fx-background-color: green; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@SettingsJavaFX-master/SettingsJavaFX-master/src/settings/style.css" />
+            <Label layoutX="56.0" layoutY="93.0" text="First Name" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="55.0" layoutY="153.0" text="Username" textFill="#ddd9d9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="56.0" layoutY="210.0" text="Password" textFill="#ddd9d9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <PasswordField layoutX="203.0" layoutY="203.0" opacity="0.3" prefHeight="34.0" prefWidth="281.0" style="-fx-background-color: dark green; -fx-border-color: white; -fx-border-radius: 20; -fx-background-insets: 0000;" styleClass="text-input" stylesheets="@SettingsJavaFX-master/SettingsJavaFX-master/src/settings/style.css" />
+            <Label layoutX="53.0" layoutY="275.0" text="Role" textFill="#ddd9d9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <RadioButton layoutX="203.0" layoutY="277.0" mnemonicParsing="false" style="-fx-region-background: #000;" styleClass="radio-color" stylesheets="@SettingsJavaFX-master/SettingsJavaFX-master/src/settings/style.css" text="Admin" textFill="WHITE" />
+            <RadioButton layoutX="281.0" layoutY="277.0" mnemonicParsing="false" styleClass="radio-color" stylesheets="@SettingsJavaFX-master/SettingsJavaFX-master/src/settings/style.css" text="User" textFill="WHITE" />
+            <Separator layoutX="54.0" layoutY="327.0" opacity="0.15" prefHeight="3.0" prefWidth="423.0" />
+            <Separator layoutX="54.0" layoutY="36.0" opacity="0.15" prefHeight="3.0" prefWidth="423.0" />
+            <Label layoutX="48.0" layoutY="349.0" text="Address" textFill="#ddd9d9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="53.0" layoutY="396.0" text="Phone" textFill="#ddd9d9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button layoutX="162.0" layoutY="464.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="108.0" style="-fx-background-color: #FCBB31;" text="LOG IN" textFill="WHITE" />
+            <Button layoutX="297.0" layoutY="465.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="112.0" style="-fx-background-color: #CE201C;" text="SIGN UP" textFill="WHITE" />
+            <TextField layoutX="203.0" layoutY="146.0" opacity="0.3" prefHeight="34.0" prefWidth="281.0" style="-fx-border-color: white; -fx-background-color: green; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@SettingsJavaFX-master/SettingsJavaFX-master/src/settings/style.css" />
+            <Label layoutX="248.0" layoutY="93.0" text="Last Name" textFill="#ddd9d9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField layoutX="318.0" layoutY="86.0" opacity="0.3" prefHeight="34.0" prefWidth="165.0" style="-fx-border-color: white; -fx-background-color: green; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@SettingsJavaFX-master/SettingsJavaFX-master/src/settings/style.css" />
+            <TextField layoutX="203.0" layoutY="342.0" opacity="0.3" prefHeight="34.0" prefWidth="281.0" style="-fx-border-color: white; -fx-background-color: green; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@SettingsJavaFX-master/SettingsJavaFX-master/src/settings/style.css" />
+            <TextField layoutX="203.0" layoutY="389.0" opacity="0.3" prefHeight="34.0" prefWidth="281.0" style="-fx-border-color: white; -fx-background-color: green; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@SettingsJavaFX-master/SettingsJavaFX-master/src/settings/style.css" />
+            <Label layoutX="166.0" layoutY="441.0" text="Already have account?" textFill="#ddd9d9">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label layoutX="218.0" layoutY="40.0" text="SIGN UP" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="515.0" layoutY="4.0" prefHeight="20.0" prefWidth="21.0" text="X" textFill="#ddd9d9">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
