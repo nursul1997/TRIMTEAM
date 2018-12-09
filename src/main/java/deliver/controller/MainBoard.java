@@ -1,7 +1,6 @@
 package deliver.controller;
 
-import java.net.URL;
-import java.util.ResourceBundle;
+
 import com.jfoenix.controls.JFXButton;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 
