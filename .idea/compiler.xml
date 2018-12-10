@@ -9,6 +9,8 @@
         <module name="TRIMTEAM" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="11" />
+    <bytecodeTargetLevel>
+      <module name="TRIMTEAM" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
